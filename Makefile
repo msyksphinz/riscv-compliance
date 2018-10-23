@@ -14,7 +14,7 @@ space:= $(empty) $(empty)
 RISCV_ISA_ALL = $(shell ls $(ROOTDIR)/riscv-test-suite)
 RISCV_ISA_OPT = $(subst $(space),$(pipe),$(RISCV_ISA_ALL))
 
-export RISCV_TARGET ?= riscvOVPsim 
+export RISCV_TARGET ?= riscvOVPsim
 export RISCV_DEVICE ?= rv32i
 export RISCV_PREFIX ?= riscv64-unknown-elf-
 
@@ -49,7 +49,7 @@ simulate:
 		RISCV_DEVICE=$(RISCV_DEVICE) \
 		RISCV_PREFIX=$(RISCV_PREFIX) \
 		run -C $(SUITEDIR)
-	
+
 verify:
 	riscv-test-env/verify.sh
 
@@ -66,4 +66,3 @@ help:
 	@echo "RISCV_DEVICE='rv32i|rv32im|...'"
 	@echo "RISCV_ISA=$(RISCV_ISA_OPT)"
 	@echo "make all_variant // all combinations"
-	
